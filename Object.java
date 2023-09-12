@@ -1,10 +1,10 @@
-public class GameObject {
+public class Object {
     private final String name;
     private final String state;
     private final double speed;
     private final String color;
 
-    public GameObject(String name, String state, double speed, String color) {
+    public Object(String name, String state, double speed, String color) {
         this.name = name;
         this.state = state;
         this.speed = speed;
