@@ -1,0 +1,3 @@
+gs/maia.dodon@example.com
+gs/igor.sandu@example.com
+gs/gaidau.mihai@example.com
