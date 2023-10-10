@@ -1,9 +1,11 @@
 package Laborator_1;
 
 import Laborator_1.Operation.*;
+
 import java.util.*;
 
 public class Main {
+
     public static void main(String[] args) {
         FileManager.readData();
         Scanner scanner = new Scanner(System.in);
@@ -32,90 +34,3 @@ public class Main {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

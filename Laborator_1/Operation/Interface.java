@@ -1,13 +1,6 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
 package Laborator_1.Operation;
 
 public class Interface {
-    public Interface() {
-    }
 
     public static void printMenu() {
         System.out.println("\nWelcome to TUM's student management system!");

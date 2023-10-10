@@ -62,10 +62,10 @@ public class FileManager {
     }
 
     //WRITER
-    private static final String Path = "../Laboratory Work #1/txtFiles/";
+    private static final String Path = "../OOP_Labs/Laborator_1/Files/";
     private static final String studentPath = Path + "Students.txt";
     private static final String facultyPath = Path + "Faculties.txt";
-    private static final String graduatesPath = Path + "GraduatedStudents.txt";
+    private static final String graduatesPath = Path + "Graduated Students.txt";
 
     public static void writeData(String input) {
         input += "\n";
@@ -112,10 +112,3 @@ public class FileManager {
         }
     }
 }
-
-
-
-
-
-
-

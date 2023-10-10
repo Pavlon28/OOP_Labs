@@ -1,12 +1,6 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
 package Laborator_1.Classes;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class Faculty {
@@ -14,13 +8,14 @@ public class Faculty {
     private final String abbreviation;
     private List<Student> students;
     private final StudyField studyField;
-    private static final List<Faculty> facultyList = new ArrayList();
+    private static final List<Faculty> facultyList = new ArrayList<>();
+
 
     public Faculty(String name, String abbreviation, StudyField studyField) {
         this.name = name;
         this.abbreviation = abbreviation;
         this.studyField = studyField;
-        this.students = new ArrayList();
+        this.students = new ArrayList<>();
     }
 
     public static void addFaculty(Faculty faculty) {
@@ -28,19 +23,19 @@ public class Faculty {
     }
 
     public void addStudent(Student student) {
-        this.students.add(student);
+        students.add(student);
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public String getAbbreviation() {
-        return this.abbreviation;
+        return abbreviation;
     }
 
     public StudyField getStudyField() {
-        return this.studyField;
+        return studyField;
     }
 
     public static List<Faculty> getFacultyList() {
@@ -50,19 +45,12 @@ public class Faculty {
     public void setStudents(List<Student> students) {
         this.students = students;
     }
-
     public static Faculty findFacultyByAbbreviation(List<Faculty> faculties, String abbreviation) {
-        Iterator var2 = faculties.iterator();
-
-        Faculty faculty;
-        do {
-            if (!var2.hasNext()) {
-                return null;
+        for (Faculty faculty : faculties) {
+            if (faculty.getAbbreviation().equals(abbreviation)) {
+                return faculty;
             }
-
-            faculty = (Faculty)var2.next();
-        } while(!faculty.getAbbreviation().equals(abbreviation));
-
-        return faculty;
+        }
+        return null;
     }
 }

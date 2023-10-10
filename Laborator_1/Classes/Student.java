@@ -1,8 +1,3 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
 package Laborator_1.Classes;
 
 import java.util.ArrayList;
@@ -17,9 +12,9 @@ public class Student {
     private final String email;
     private final String facultyAbbreviation;
     private boolean isGraduated;
-    private static final List<Student> studentsList = new ArrayList();
+    private static final List<Student> studentsList = new ArrayList<>();
 
-    public Student(String firstName, String lastName, String email, Integer day, Integer month, Integer year, String facultyAbbreviation) {
+    public Student(String firstName, String lastName, String email, Integer day, Integer month, Integer year, String facultyAbbreviation){
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -35,35 +30,34 @@ public class Student {
     }
 
     public String getFirstName() {
-        return this.firstName;
+        return firstName;
     }
 
     public String getLastName() {
-        return this.lastName;
+        return lastName;
     }
 
     public String getEmail() {
-        return this.email;
+        return email;
     }
 
     public Integer getDay() {
-        return this.day;
+        return day;
     }
 
     public Integer getMonth() {
-        return this.month;
+        return month;
     }
 
     public Integer getYear() {
-        return this.year;
+        return year;
     }
 
     public static List<Student> getStudentsList() {
         return studentsList;
     }
-
     public String getFacultyAbbreviation() {
-        return this.facultyAbbreviation;
+        return facultyAbbreviation;
     }
 
     public void linkWithFaculty(Faculty faculty) {
@@ -71,7 +65,7 @@ public class Student {
     }
 
     public boolean isGraduated() {
-        return this.isGraduated;
+        return isGraduated;
     }
 
     public void graduate() {
