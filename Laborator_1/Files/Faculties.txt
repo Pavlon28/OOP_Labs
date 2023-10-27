@@ -9,4 +9,5 @@ nf/Faculty of Computer Science and Engineering/FCSE/SOFTWARE_ENGINEERING
 nf/Faculty of Food Technology/FFT/FOOD_TECHNOLOGY
 nf/Faculty of Urbanism and Architecture/FUA/URBANISM_ARCHITECTURE
 nf/Faculty of Veterinary Medicine/FVM/VETERINARY_MEDICINE
-nf/Faculty of Mechanical and Aerospace Engineering/FMAE/MECHANICAL_ENGINEERING
+nf/Faculty of Mechanical and Aerospace Engineering/FMAE/MECHANICAL_ENGINEERINGnf/Faculty of Test Pavel/FTP/SOFTWARE_ENGINEERING
+nf/Quantum Fizics/FQF/MECHANICAL_ENGINEERING

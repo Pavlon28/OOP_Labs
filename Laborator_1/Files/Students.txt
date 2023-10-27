@@ -7,4 +7,6 @@ ns/FUPA/Iordan/Liviu/liviujordan@isa.utm.md/5/6/2002
 ns/FVSM/Nicoleta/Leca/nicoleleca@yahoo.mail/1/4/2003
 ns/FVSM/Dan/Gadarca/danu.gadar@utm.md/22/7/1996
 ns/FUA/Mariana/Plugaru/mariana_plugaru@gmai.com/8/11/2001
-ns/FIT/Paul/Mark/paul.mark@isa.utm.md/17/8/1992
+ns/FIT/Paul/Mark/paul.mark@isa.utm.md/17/8/1992ns/FTP/Pavel/Tapu/pavel.tapu@example.com/31/10/2003
+ns/FQF/John/Snow/js.gmail.com/13/02/1999
+ns/FQF/Ion/Zapada/IZ.gmail.com/13/02/1999
