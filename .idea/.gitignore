@@ -2,8 +2,8 @@
 /shelf/
 /workspace.xml
 
-/out
-/OOP_Labs.iml
+out/*
+OOP_Labs.iml/*
 # Editor-based HTTP Client requests
 /httpRequests/
 # Datasource local storage ignored files
