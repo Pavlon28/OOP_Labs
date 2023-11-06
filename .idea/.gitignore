@@ -2,7 +2,9 @@
 /shelf/
 /workspace.xml
 
-out/*
+out/
+!/src/main//out/
+!/src/test//out/
 OOP_Labs.iml/*
 # Editor-based HTTP Client requests
 /httpRequests/
