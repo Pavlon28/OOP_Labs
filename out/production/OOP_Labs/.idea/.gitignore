@@ -1,6 +1,11 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+
+out/
+!/src/main//out/
+!/src/test//out/s
+OOP_Labs.iml/*
 # Editor-based HTTP Client requests
 /httpRequests/
 # Datasource local storage ignored files
