@@ -1,6 +1,5 @@
 package Laborator_2.Operations;
 
-
 import java.util.Scanner;
 
 public class Interface {
@@ -12,27 +11,32 @@ public class Interface {
     }
 
     public void run() {
-        var detector = new FileDetector(folderPath);
+        FileDetector detector = new FileDetector(folderPath); // Use explicit data type
 
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("Enter command (commit, info, status, exit):");
             String command = scanner.nextLine();
             switch (command) {
-                case "commit" -> detector.commit();
-                case "info" -> {
+                case "commit":
+                    detector.commit();
+                    break;
+                case "info":
                     System.out.println("Enter file name:");
                     String fileName = scanner.nextLine();
                     detector.info(fileName);
-                }
-                case "status" -> detector.status();
-                case "exit" -> {
+                    break;
+                case "status":
+                    detector.status();
+                    break;
+                case "exit":
                     scanner.close();
                     System.exit(0);
-                }
-                default -> System.out.println("Invalid command.");
+                    break;
+                default:
+                    System.out.println("Invalid command.");
+                    break;
             }
         }
     }
-
 }

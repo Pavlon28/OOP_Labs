@@ -1,11 +1,11 @@
 package Laborator_2.Operations;
 
-
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.util.List;
 import java.util.regex.Pattern;
 
 public class Service {
@@ -17,12 +17,12 @@ public class Service {
     }
 
     public void info(String fileName) {
-        var file = new File(folderPath + "/" + fileName);
+        File file = new File(folderPath + File.separator + fileName);
         if (file.exists()) {
             System.out.println("File Name: " + file.getName());
             try {
-                var attrs = Files.readAttributes(file.toPath(), BasicFileAttributes.class);
-                System.out.println("Created Date: " + DateHelper.formatDate(attrs.creationTime().toMillis()));
+                BasicFileAttributes attrs = Files.readAttributes(file.toPath(), BasicFileAttributes.class);
+                System.out.print("Created Date: " + DateHelper.formatDate(attrs.creationTime().toMillis()));
             } catch (IOException e) {
                 e.printStackTrace();
                 System.out.println("Error fetching created date.");
@@ -30,30 +30,35 @@ public class Service {
 
             System.out.println("Updated Date: " + DateHelper.formatDate(file.lastModified()));
 
-            var extension = getFileExtension(file);
+            String extension = getFileExtension(file);
             System.out.println("File Extension: " + extension);
 
-
             switch (extension) {
-                case "png", "jpg" -> {
-                    var dimensions = getImageDimensions(file);
+                case "png":
+                case "jpg":
+                    String dimensions = getImageDimensions(file);
                     System.out.println("Image Size: " + dimensions);
-                }
-                case "txt" -> {
+                    break;
+                case "txt":
                     try {
-                        var lines = Files.readAllLines(file.toPath());
+                        List<String> lines = Files.readAllLines(file.toPath());
                         System.out.println("Line Count: " + lines.size());
-                        System.out.println("Word Count: " + lines.stream().mapToInt(line -> line.split("\\s+").length).sum());
+                        System.out.println(
+                                "Word Count: " + lines.stream().mapToInt(line -> line.split("\\s+").length).sum());
                         System.out.println("Character Count: " + lines.stream().mapToInt(String::length).sum());
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                }
-                case "py", "java" -> {
+                    break;
+                case "py":
+                case "java":
                     System.out.println("Line Count: " + getLineCount(file));
                     System.out.println("Class Count: " + getClassCount(file));
                     System.out.println("Method Count: " + getMethodCount(file));
-                }
+                    break;
+                default:
+                    // Handle the default case
+                    break;
             }
 
         } else {
@@ -62,7 +67,7 @@ public class Service {
     }
 
     private String getFileExtension(File file) {
-        var fileName = file.getName();
+        String fileName = file.getName();
         if (fileName.lastIndexOf(".") != -1 && fileName.lastIndexOf(".") != 0) {
             return fileName.substring(fileName.lastIndexOf(".") + 1);
         } else {
@@ -72,7 +77,7 @@ public class Service {
 
     private String getImageDimensions(File file) {
         try {
-            var image = ImageIO.read(file);
+            java.awt.image.BufferedImage image = ImageIO.read(file);
             return image.getWidth() + "x" + image.getHeight();
         } catch (IOException e) {
             e.printStackTrace();
@@ -91,11 +96,11 @@ public class Service {
 
     private int getClassCount(File file) {
         try {
-            var lines = Files.readAllLines(file.toPath());
-            var content = String.join(" ", lines);
+            java.util.List<String> lines = Files.readAllLines(file.toPath());
+            String content = String.join(" ", lines);
 
-            var classPattern = Pattern.compile("\\bclass\\b");
-            var classMatcher = classPattern.matcher(content);
+            Pattern classPattern = Pattern.compile("\\bclass\\b");
+            java.util.regex.Matcher classMatcher = classPattern.matcher(content);
 
             int count = 0;
             while (classMatcher.find()) {
@@ -111,12 +116,12 @@ public class Service {
 
     private int getMethodCount(File file) {
         try {
-            var lines = Files.readAllLines(file.toPath());
-            var content = String.join(" ", lines);
+            java.util.List<String> lines = Files.readAllLines(file.toPath());
+            String content = String.join(" ", lines);
 
-            var methodPattern = Pattern.compile("(public|protected|private|static|\\s) +[\\w\\<\\>\\[\\]]+\\s+(\\w+) *\\([^\\)]*\\) *\\{? *\\n?");
-            var methodMatcher = methodPattern.matcher(content);
-
+            Pattern methodPattern = Pattern.compile(
+                    "(public|protected|private|static|\\s) +[\\w\\<\\>\\[\\]]+\\s+(\\w+) *\\([^\\)]*\\) *\\{? *\\n?");
+            java.util.regex.Matcher methodMatcher = methodPattern.matcher(content);
             int count = 0;
             while (methodMatcher.find()) {
                 count++;
@@ -128,5 +133,4 @@ public class Service {
             return 0;
         }
     }
-
 }
