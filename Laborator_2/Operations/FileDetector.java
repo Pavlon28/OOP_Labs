@@ -90,7 +90,7 @@ public class FileDetector extends Detector {
     }
 
     public void info(String fileName) {
-        Service fileService = new Provider.Service(folderPath);
+        Service fileService = new Service(folderPath);
         fileService.info(fileName);
     }
 
@@ -126,4 +126,3 @@ public class FileDetector extends Detector {
         }
     }
 }
- 

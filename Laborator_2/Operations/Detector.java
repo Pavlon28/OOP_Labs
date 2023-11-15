@@ -11,13 +11,13 @@ abstract public class Detector {
     }
 
     protected File[] getListOfFiles() {
-        var folder = new File(folderPath);
+        File folder = new File(folderPath); // Use explicit data type
         if (!folder.exists() || !folder.isDirectory()) {
             System.out.println("It's not a valid directory: " + folderPath);
             return null;
         }
 
-        var listOfFiles = folder.listFiles();
+        File[] listOfFiles = folder.listFiles(); // Use explicit data type
 
         if (listOfFiles == null) {
             System.out.println("Unable to list files from the directory: " + folderPath);
