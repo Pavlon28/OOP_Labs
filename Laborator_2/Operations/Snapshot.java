@@ -87,7 +87,7 @@ public class Snapshot {
         Snapshot snapshot = new Snapshot();
 
         try {
-            Path directoryPath = Paths.get("C:\\Users\\pavel\\OneDrive\\Documents\\Idea Projects\\OOP_Labs\\Laborator_2\\Operations\\commit_info.txt");
+            Path directoryPath = Paths.get("C:\\Users\\pavel\\OneDrive\\Documents\\Idea Projects\\OOP_Labs\\Laborator_2\\commit_info.txt");
             Files.walk(directoryPath)
                     .filter(Files::isRegularFile)
                     .forEach(file -> {

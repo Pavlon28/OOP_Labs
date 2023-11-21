@@ -1,7 +1,6 @@
 package Laborator_2.Operations;
 
 import java.io.*;
-import java.security.Provider;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -12,7 +11,7 @@ public class FileDetector extends Detector {
     private List<String> changeMessages = new ArrayList<>();
     private long snapshotTime = System.currentTimeMillis();
     private final Map<String, Long> fileLastModifiedMap = new HashMap<>();
-    private static final String COMMIT_FILE = "commit_info.txt";
+    private static final String COMMIT_FILE = "Laborator_2\\commit_info.txt";
 
     public FileDetector(String folderPath) {
         super(folderPath);
@@ -109,7 +108,7 @@ public class FileDetector extends Detector {
     }
 
     private void loadCommitInfo() {
-        // Read commit 
+        // Read commit
         try (BufferedReader reader = new BufferedReader(new FileReader(COMMIT_FILE))) {
             snapshotTime = Long.parseLong(reader.readLine());
             fileLastModifiedMap.clear();
