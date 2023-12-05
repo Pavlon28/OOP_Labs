@@ -1,4 +1,4 @@
-package Laborator_3.queue;
+package Laborator_3.Queue;
 
 public interface Queue<T> {
     void enqueue(T element);
