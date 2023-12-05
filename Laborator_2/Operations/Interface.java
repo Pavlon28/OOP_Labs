@@ -15,7 +15,13 @@ public class Interface {
 
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.println("Enter command (commit, info, status, exit):");
+            System.out.println("Available commands:");
+            System.out.println("commit");
+            System.out.println("info");
+            System.out.println("status");
+            System.out.println("exit");
+            System.out.println("___________________");
+            System.out.println("Your input:");
             String command = scanner.nextLine();
             switch (command) {
                 case "commit":
